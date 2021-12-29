@@ -1,0 +1,138 @@
+<form id=write>
+  <details id=instr>
+    <summary>Instructions</summary>
+    <h2>Rolling</h2>
+    <p>The way you do anything in this game is to say what you're gonna do and the DM will tell you what skill to roll for and how many dice. You roll that many D6s and, if total value of all the dice is less than the skill in question, you succeed! Rolling all 6s is a critical fail, rolling all 1s is a critical success, and rolling exactly the same as the skill is a very slim success.</p>
+    <p>Contested rolls, when two people roll in competition with one another, are a bit more complicated. To make a contested roll, the number of dice to roll is double your opponent's level. Likewise, they roll double your level, and you each compare your scores to the relevant skill. Whoever rolls the most below their skill wins the contest.</p>
+    <h2>Skills</h2>
+    <p>But what do the skills actually mean? When will you need which skill? That's up to the DM, but here's some general guidance:</p>
+    <ul>
+      <li><b>Command:</b> This is how well you can take charge and inspire others. You'd use command when the team needs someone to pull them together, or when you need to get your way in an argument.</li>
+      <li><b>Engineering:</b> This is how good you are with tech. You'd use engineering when something needs fixing or when you need to do some space bullshit with the deflector array.</li>
+      <li><b>Science:</b> This is how well versed you are in the sciences, how well you understand the cosmos and the chemicals, organisms, planets, and everything else in it. You'd use science when your character needs to know something, like the mating habits of the Cardassian vole or the wavelength of light from a pulsar.</li>
+      <li><b>Combat:</b> This is how good you are in a fight. You'd use combat when you're in a fight. Qapla'!</li>
+      <li><b>Commerce:</b> This is how good you are at aquiring profit. You'd use this when you need to haggle down a price when buying, wangle up a price when selling, or very occasionally talk a Vulcan militant out of escalating conflict with the Cardassians. It all comes down to the Third Rule of Acquisition.</li>
+      <li><b>Piloting:</b> This is how good you are at piloting spacecraft. You'd use this whenever you have the helm; whether that's a starship, runabout, bird of prey, or a vintage 1969 Chevy Camaro.</li>
+      <li><b>Medicine:</b> This is how good you are at 24th century medicine. You'd use medicine whenever an ally, or sometimes yourself, in need of healing. If you medicine score is higher than their max health, you can also use your medicine skill to save them from death!</li>
+      <li><b>Espionage:</b> This is how good you are at deception, sneaking and all the skills of spycraft, my dear Doctor. You'd use espionage whenever you need to lie, manipulate someone, sneak around or root out a conspiracy.</li>
+    </ul>
+    <h2>Affiliation, Role & Proficiency</h2>
+    <p>There's no shortage of federations, empires & alliances in space. Your affiliation dictates what roles are available to you - and your role determines which skill you have proficiency in. When rolling against a proficient skill, you can minus 3 * your level from the dice roll total, so choose carefully!</p>
+    <h2>Levelling</h2>
+    <p>Each die you roll earns 1 experience point, if you use the dice roller on this character sheet this is all done for you. When you have enough experience points you'll level up, increasing your max health and allowing you to add more points to your skills. More difficult challenges will require more dice rolls, so the more you push yourself the faster you'll level up, but the more danger you'll put yourself in!</p>
+    <h2>Health</h2>
+    <p>Whenever you take damage, for example if an angry Klingon at Quark's swings at you with a bat'leth, you'll lose health points. When you have chance to rest, you'll return to full health - when your DM tells you to, click the ☾ to refill your health.</p>
+    <p>When your health points fall below zero, you need to make a death save! Roll as many dice as you are health points below zero - to survive, you need to roll below your max health or, if there's an ally nearby, their Medicine score. Whichever is the highest. On a success, your health resets to 0, meaning any damage at all will put you back in the negative and require another death save. On a fail, you die!</p>
+    <p>🖖 Live long and prosper! 🖖</p>
+    <hr>
+    
+  </details>
+  <section id=progression>
+    <label for=lvl>Level</label>
+    <label for=exp>Experience</label>
+    <input id=lvl type=number value=1 min=1 disabled></input>
+    <input id=exp type=number value=1 min=1 onchange=updateLvl() data-saveload></input>
+  </section>
+  <section id=basics>
+    <input placeholder=Name id=name class=title data-saveload></input>
+    <img id=emblem />
+    <select id=affiliation onchange=setAffiliation() data-saveload>
+      <option value=starfleet>Starfleet</option>
+      <option value=klingon>Klingon Empire</option>
+      <option value=bajoran>Bajoran Militia</option>
+      <option value=cardassian>Cardassian Union</option>
+      <option value=ferengi>Ferengi Alliance</option>
+      <option value=romulan>Romulan Star Empire</option>
+    </select>
+    <select id=role onchange=setRole() data-saveload>
+      <option value=egr class=starfleet,klingon,bajoran,cardassian,ferengi,romulan>Engineer</option>
+      <option value=cbt class=starfleet,bajoran index=1>Security Officer</option>
+      <option value=cbt class=bajoran index=2>Terrorist</option>
+      <option value=cbt class=klingon index=3>Bakk</option>
+      <option value=cbt class=cardassian,romulan index=4>Soldier</option>
+      <option value=sci class=starfleet index=5>Science Officer</option>
+      <option value=sci class=bajoran,cardassian,romulan index=6>Scientist</option>
+      <option value=med class=starfleet,cardassian,romulan index=7>Doctor</option>
+      <option value=med class=klingon,bajoran index=8>Medic</option>
+      <option value=fly class=starfleet,klingon,bajoran,cardassian,romulan index=9>Pilot</option>
+      <option value=cmd class=starfleet,klingon index=10>Commander</option>
+      <option value=cmd class=bajoran index=11>Major</option>
+      <option value=cmd class=cardassian index=12>Gul</option>
+      <option value=cmd class=ferengi index=13>Grand Negus</option>
+      <option value=cmd class=romulan index=14>Senator</option>
+      <option value=pft class=ferengi index=15>Trader</option>
+      <option value=pft class=ferengi index=16>Shopkeep</option>
+      <option value=int class=starfleet index=17>Intelligence Officer</option>
+      <option value=int class=bajoran index=18>Spy</option>
+      <option value=int class=cardassian index=19>Obsidian Order Agent</option>
+      <option value=int class=ferengi index=20>Inspector</option>
+      <option value=int class=romulan index=21>Tal Shiar</option>
+    </select>
+  </section>
+  <section id=medical>
+    <h2>Medical</h2>
+    <input id=rest type=button value=☾ onclick=doRest()></input>
+    <input id=hp type=number value=0 data-saveload></input>
+    <output id=max-hp for=hp>6</output>
+  </section>
+  <section id=rolling>
+    <h2>Rolling</h2>
+    <output id=roll-total for=roll>0</output>
+    <output id=roll-string for=roll></output>
+    <div id=ndice-ctrls>
+      <output id=ndice>1</output>
+      <input type=button value="+" onclick=updateNDice(1)></input>
+      <input type=button value="-" onclick=updateNDice(-1)></input>
+    </div>
+    <select id=roll-stat type=button value="cmd" onchange=checkProficiency()>
+      <option value=cmd>Command</option>
+      <option value=egr>Engineering</option>
+      <option value=sci>Science</option>
+      <option value=cbt>Combat</option>
+      <option value=pft>Commerce</option>
+      <option value=fly>Piloting</option>
+      <option value=med>Medicine</option>
+      <option value=int>Espionage</option>
+    </select>
+    <input id=roll type=button value="Engage!" onclick=doRoll()></input>
+  </section>
+  <section id=skills>
+    <h2>Skills</h2>
+    <label for=cmd>Command</label>
+    <label for=egr>Engineering</label>
+    <label for=sci>Science</label>
+    <label for=cbt>Combat</label>
+
+    <input id=cmd type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+    <input id=egr type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+    <input id=sci type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+    <input id=cbt type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+
+    <label for=pft>Commerce</label>
+    <label for=fly>Piloting</label>
+    <label for=med>Medicine</label>
+    <label for=int>Espionage</label>
+
+    <input id=pft type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+    <input id=fly type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+    <input id=med type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+    <input id=int type=number value=1 min=1 onchange=updateStats() data-saveload></input>
+
+  </section>
+  <section id=lore>
+    <h2>Details</h2>
+    <mark-down mode=view id=details data-saveload>Hello my name is William Riker and I like to
+#### fuck
+![Trombone.](https://2.bp.blogspot.com/-kz-6r-cGFYI/WRTSQAE7R-I/AAAAAAAAFww/_-tdFAm4Ik0kGYDMXZ4HWw7xYEbXQWtTwCLcB/s1600/future-imperfect-hd-001.jpg)</mark-down>
+  </section>
+  <nav>
+    <span></span>
+    <input type=button value="⇞ Load" onclick=load()></input>
+    <input type="file" id=loadbuffer style="display:none"></input>
+    <input type=button value="⇟ Save" onclick=save()></input>
+    <a id=savebuffer style="display:none"></a>
+  </nav>
+  <footer>
+    Affiliation logos from <a href="https://startrekdesignproject.com/symbols/">The Star Trek Design Project</a>. Details panel powered by <a href="https://markdown-it.github.io/">markdown.it</a>.
+  </footer>
+</form>
