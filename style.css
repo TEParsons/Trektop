@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+:root {
+  /** Uses 2369 colors from https://codepen.io/Mokurunner/details/eqtHl **/
+  --offwhite: #ffcc66;
+  --offblack: #333344;
+  --orange: #ff9900;
+  --peach: #ff9966;
+  --aubergine: #cc6666;
+  --purple: #cc6699;
+  --violet: #cc99cc;
+  --blue: #9999ff;
+  --grey: #9999cc;
+
+  background-color: black;
+  color: var(--offwhite);
+  font-family: Teko;
+}
+
+body {
+  position: relative;
+  padding: 2rem 5rem;
+}
+footer {
+  margin-top: 10rem;
+}
+
+#write {
+  width: auto;
+  max-width: 50rem;
+}
+#write:before {
+  content: "TREKTOP";
+}
+#write:after {
+  display: none;
+}
+
+/** Instructions **/
+#instr summary {
+  position: absolute;
+  bottom: 100%;
+  right: 22rem;
+  color: black;
+}
+#instr summary::marker {
+  color: black;
+}
+
+/** Interface **/
+section {
+  margin: 1rem 0;
+}
+
+label,
+output {
+  position: relative;
+  font-size: 2rem;
+  margin: 0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+input,
+textarea,
+select,
+.md-viewer {
+  font-family: Teko;
+  background-color: black;
+  color: var(--offwhite);
+  width: 100%;
+
+  padding: 0 0.5em;
+  margin: 0;
+  box-sizing: border-box;
+
+  border: 0.2rem solid var(--blue);
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+}
+
+input[type="number"] {
+  font-size: 2rem;
+  text-align: center;
+}
+
+input[type="text"] {
+}
+
+input#name {
+  font-size: 4.5rem;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+}
+
+mark-down {
+  height: 100vh;
+}
+mark-down a.md-toggle {
+  font-size: 2rem;
+}
+mark-down textarea.md-editor {
+  resize: none;
+}
+
+/** Basics **/
+#exp {
+  text-align: left;
+}
+#emblem {
+  object-fit: contain;
+  object-position: center center;
+  height: 2.5rem;
+  width: 100%;
+}
+
+/** Medical **/
+input#hp {
+  text-align: right;
+}
+output[for=hp]:before {
+  content: "/"
+}
+
+/** Rolling **/
+#roll-total {
+  position: relative;
+  font-size: 8rem;
+  line-height: 100%;
+}
+#ndice-ctrls {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  row-gap: 0.5rem;
+
+}
+#ndice:before {
+  content: "x";
+  font-size: 0.5em;
+}
+#roll-string {
+  word-wrap: break-word;
+}
+
+/** Skills **/
+label.proficient::after {
+  position: absolute;
+  right: 0;
+  content:"⍟";
+  text-align: right;
+}
+
+/** Layout **/
+h1,
+h2,
+h3,
+textarea,
+mark-down {
+  grid-column-start: left;
+  grid-column-end: right;
+}
+
+section#basics {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  grid-template-columns: [left] 2.5rem auto [mid] auto [right];
+}
+#name {
+  grid-column-start: left;
+  grid-column-end: right;
+}
+
+section#progression {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  grid-template-columns: [left] 10rem [mid] auto [right];
+}
+
+section#medical {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  grid-template-columns: [left] 4em auto 5rem [right];
+}
+label[for="hp"] {
+  grid-column-start: left;
+  grid-column-end: right;
+}
+
+section#skills {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  grid-template-columns: [left] calc(25% - 0.75rem) calc(25% - 0.75rem) calc(
+      25% - 0.75rem
+    ) calc(25% - 0.75rem) [right];
+}
+
+section#rolling {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  grid-template-columns: [left] 9rem [counter] auto [buttons] 5rem [right];
+}
+input#roll {
+  grid-column-start: counter;
+  grid-column-end: right;
+}
+
+section#lore {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  grid-template-columns: [left] auto [right];
+}
+
+nav {
+  margin: 1rem 0;
+}
+nav input[type=button] {
+  width: 5rem;
+}
