@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  /** Uses 2369 colors from https://codepen.io/Mokurunner/details/eqtHl **/
+  --offwhite: #ffcc66;
+  --offblack: #333344;
+  --orange: #ff9900;
+  --peach: #ff9966;
+  --aubergine: #cc6666;
+  --purple: #cc6699;
+  --violet: #cc99cc;
+  --blue: #9999ff;
+  --grey: #9999cc;
+
+  background-color: black;
+  color: var(--offwhite);
+  font-family: Teko;
+}
+
+
+/** Page **/
+
+
+html {
+}
+#write {
+  position: relative;
+  left: 2rem; top: 4rem !important;
+  
+  width: calc(100vw - 10rem);
+  max-width: 75rem;
+  min-width: 35rem;
+  min-height: calc(100vh - 10rem);
+  
+  margin: 2rem auto 0 auto;
+  padding: 2rem;
+  
+  border-radius: 2rem 2rem 0rem 0rem;
+  box-shadow: 
+    -2rem -4rem 0 0rem var(--purple),
+    -2rem 0 0 0rem var(--purple);
+}
+
+#write:before {
+  content: "TYPORA";
+  
+  position: absolute;
+  bottom: 100%; right: 5rem;
+  
+  height: 4rem;
+  width: 12rem;
+  
+  background-color: black;
+  
+  box-shadow: 
+    -2rem 0 0 var(--orange),
+    -2.5rem 0 0 black,
+    -8.5rem 0 0 var(--grey),
+    -9rem 0 0 black;
+  
+  box-sizing: content-box !important;
+  padding: 0 1rem;
+  
+  line-height: 5rem;
+  font-size: 5rem;
+}
+#write:after {
+  content: "0800h 46302d";
+  
+  position: absolute;
+  bottom: 100%; right: 22rem;
+  
+  color: black;
+}
+
+
+/** Headings **/
+
+
+h1, 
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  
+  margin: 2rem 0;
+  
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  
+  text-transform: uppercase;
+  font-weight: 500;
+  
+   box-shadow: 
+    -2rem 0 0 0 black,
+    -4rem 0 0 0 var(--orange),
+    -4rem 0 0 0.5rem black;
+}
+h1::-webkit-scrollbar,
+h2::-webkit-scrollbar,
+h3::-webkit-scrollbar,
+h4::-webkit-scrollbar,
+h5::-webkit-scrollbar,
+h6::-webkit-scrollbar {
+  display: none;
+}
+h1:before,
+h2:before,
+h3:before {
+  content: "";
+  
+  position: relative;
+  display: inline-block;
+  
+  height: 100%;
+  width: 2rem;
+  
+  border-radius: 2rem 0 0 2rem;
+}
+h1:after,
+h2:after,
+h3:after {
+  content: "";
+  
+  position: relative;
+  display: inline-block;
+  
+  height: 100%;
+  width: 2rem;
+  
+  margin-left: 0.5rem;
+  
+  border-radius: 0 2rem 2rem 0;
+}
+
+h1 {
+  height: 3rem;
+  line-height: 4rem;
+  font-size: 4.5rem;
+}
+h1:before, h1:after {
+  background-color: var(--orange);
+}
+h1:before{
+  margin-right: 1.5rem;
+  
+  box-shadow: 
+    0.5rem 0 0 0 black,
+    1rem 0 0 0 var(--orange);
+}
+
+h2 {
+  height: 2.5rem;
+  line-height: 3rem;
+  font-size: 3.8rem;
+}
+h2:before, h2:after {
+  background-color: var(--aubergine);
+}
+h2:before{
+  margin-right: 2.5rem;
+  
+  box-shadow: 
+    0.5rem 0 0 0 black,
+    1rem 0 0 0 var(--aubergine),
+    1.5rem 0 0 0 black,
+    2rem 0 0 0 var(--aubergine);
+}
+
+h3 {
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 3rem;
+}
+h3:before, h3:after {
+  background-color: var(--blue);
+}
+h3:before{
+  margin-right: 3.5rem;
+  
+  box-shadow: 
+    0.5rem 0 0 0 black,
+    1rem 0 0 0 var(--blue),
+    1.5rem 0 0 0 black,
+    2rem 0 0 0 var(--blue),
+    2.5rem 0 0 0 black,
+    3rem 0 0 0 var(--blue);
+}
+
+h4,
+h5,
+h6 {
+   box-shadow: 
+    -2rem 0 0 0 black,
+    -4rem 0 0 0 var(--peach),
+    -4rem 0 0 0.5rem black;
+}
+h4:before,
+h5:before,
+h6:before {
+  content: "";
+  
+  position: relative;
+  display: inline-block;
+  
+  height: 100%;
+  width: 0.5rem;
+  
+}
+
+h4 {
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 3rem;
+}
+h4:before, h4:after {
+  background-color: var(--peach);
+}
+h4:before{
+  margin-right: 3.5rem;
+  
+  box-shadow: 
+    0.5rem 0 0 0 black,
+    1rem 0 0 0 var(--peach),
+    1.5rem 0 0 0 black,
+    2rem 0 0 0 var(--peach),
+    2.5rem 0 0 0 black,
+    3rem 0 0 0 var(--peach);
+}
+
+h5 {
+  height: 1.6rem;
+  line-height: 1.5rem;
+  font-size: 2.5rem;
+}
+h5:before, h5:after {
+  background-color: var(--purple);
+}
+h5:before{
+  margin-right: 4.5rem;
+  
+  box-shadow: 
+    0.5rem 0 0 0 black,
+    1rem 0 0 0 var(--purple),
+    1.5rem 0 0 0 black,
+    2rem 0 0 0 var(--purple),
+    2.5rem 0 0 0 black,
+    3rem 0 0 0 var(--purple),
+    3.5rem 0 0 0 black,
+    4rem 0 0 0 var(--purple);
+}
+
+h6 {
+  height: 1.3rem;
+  line-height: 1.5rem;
+  font-size: 1.8rem;
+}
+h6:before, h6:after {
+  background-color: var(--grey);
+}
+h6:before{
+  margin-right: 5.5rem;
+  
+  box-shadow: 
+    0.5rem 0 0 0 black,
+    1rem 0 0 0 var(--grey),
+    1.5rem 0 0 0 black,
+    2rem 0 0 0 var(--grey),
+    2.5rem 0 0 0 black,
+    3rem 0 0 0 var(--grey),
+    3.5rem 0 0 0 black,
+    4rem 0 0 0 var(--grey),
+    3.5rem 0 0 0 black,
+    4rem 0 0 0 var(--grey),
+    4.5rem 0 0 0 black,
+    5rem 0 0 0 var(--grey);
+}
+
+
+/** Block Elements **/
+
+
+p, li, table, dl {
+  z-index: -1;
+  margin: 2rem 0;
+  
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+blockquote {
+  z-index: 1;
+  
+  margin: 2rem 0;
+  padding-left: 1rem;
+    
+  box-shadow: 
+    -0.5rem 0 0 0 black,
+    -1rem 0 0 0 var(--grey);
+}
+
+*::marker {
+  color: var(--aubergine);
+  font-weight: 800;
+}
+
+hr {
+  border: none;
+  background-color: var(--offwhite);
+  height: 0.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  
+  box-shadow: 
+    -4rem 0 0 0 var(--offwhite),
+    -4rem 0 0 0.5rem black;
+}
+li hr, table hr, blockquote hr, di hr, dd hr {
+  box-shadow: none;
+}
+
+pre {
+  padding: 1rem;
+  
+  background-color: var(--offblack) !important;
+  
+  font-family: Share Tech Mono;
+  
+  box-shadow: 
+    -2rem 0 0 0 black,
+    -4rem 0 0 0 var(--grey),
+    -4rem 0 0 0.5rem black;
+}
+li pre, table pre, blockquote pre, di pre, dd pre {
+  box-shadow: none;
+}
+
+img {
+  position: relative;
+  
+  max-width: 100%;
+  
+  background-color: black;
+    
+  box-shadow: 
+    -2rem 0 0 0 black,
+    -4rem 0 0 0 var(--violet),
+    -4rem 0 0 0.5rem black;
+}
+li img, table img, blockquote img, di img, dd img {
+  box-shadow: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate !important;
+}
+tr {
+  box-shadow: 
+    -2rem 0 0 0 black,
+    -4rem 0 0 0 var(--peach),
+    -4rem 0 0 0.5rem black;
+  
+}
+li tr, tr tr, td tr, blockquote tr, di tr, dd tr {
+  box-shadow: none;
+}
+th, td {
+  color: black;
+  padding: 1rem;
+  border: 0.5rem solid black;
+  border-bottom: 0.5rem solid black; /* Needed for Typora */
+  border-radius: 2rem;
+}
+th {
+  background-color: var(--orange);
+}
+td {
+  background-color: var(--purple)
+}
+
+/** Inline Elements **/
+
+
+a {
+  color: var(--violet);
+}
+a:hover {
+  color: var(--orange)
+}
+a:visited {
+  color: var(--blue)
+}
+table a, table a:visited {
+  color: black;
+}
+
+code {
+  box-sizing: border-box;
+  padding: 0.1rem 0.5rem;
+  
+  background-color: var(--offblack);
+  
+  font-family: Share Tech Mono;
+}
+
+mark {
+  box-sizing: border-box;
+  padding: 0.1rem 0.5rem;
+  
+  background-color: var(--offwhite);
+  color: black;
+}
+
+div {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+*::selection { 
+  background-color: var(--offwhite);
+  color: black;
+}
+
+/** Typora specific **/
+p>.md-image:only-child {
+  width: auto !important;
+}
+
+sup.md-footnote {
+  color: black;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+  width: auto;
+}
+
+h3.md-focus:before {
+    border-radius: 2rem 0 0 2rem;
+}
+h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
+  border-radius: 0;
+}
+h3.md-focus:before, h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
+    content: '';
+    color: none;
+    border: none;
+    position:  relative;
+    left: auto;
+    top: auto;
+    float: auto;
+    font-size: auto;
+    padding-left: auto;
+    padding-right: auto;
+    vertical-align: auto;
+    font-weight: auto;
+    line-height: auto;
+}
+
+
+/** Code **/
+
+.cm-s-inner .cm-keyword {
+    color: #708;
+}
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #219;
+}
+.cm-s-inner .cm-number {
+    color: #164;
+}
+.cm-s-inner .cm-def {
+    color: #00f;
+}
+.cm-s-inner .cm-variable {
+    color: black;
+}
+.cm-s-inner .cm-variable-2 {
+    color: #05a;
+}
+.cm-s-inner .cm-variable-3 {
+    color: #085;
+}
+.cm-s-inner .cm-property {
+    color: black;
+}
+.cm-s-inner .cm-operator {
+    color: black;
+}
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #a50;
+}
+.cm-s-inner .cm-string {
+    color: #a11;
+}
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+.cm-s-inner .cm-meta {
+    color: #555;
+}
+.cm-s-inner .cm-qualifier {
+    color: #555;
+}
+.cm-s-inner .cm-builtin {
+    color: #30a;
+}
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+.cm-s-inner .cm-tag {
+    color: #170;
+}
+.cm-s-inner .cm-attribute {
+    color: #00c;
+}
+.cm-s-inner .cm-header,
+.cm-s-inner.cm-header {
+    color: blue;
+}
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote  {
+    color: #090;
+}
+.cm-s-inner .cm-hr,
+.cm-s-inner.cm-hr {
+    color: #999;
+}
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #00c;
+}
+.cm-negative {
+    color: #d44;
+}
+.cm-positive {
+    color: #292;
+}
+.cm-header,
+.cm-strong {
+    font-weight: bold;
+}
+.cm-del {
+    text-decoration: line-through;
+}
+.cm-em {
+    font-style: italic;
+}
+.cm-link {
+    text-decoration: underline;
+}
+.cm-error {
+    color: #f00;
+}
+.cm-invalidchar {
+    color: #f00;
+}
+div.CodeMirror span.CodeMirror-matchingbracket {
+    color: #0f0;
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    color: #f22;
+}
+.cm-s-inner .CodeMirror-activeline-background {
+    background: inherit;
+}
